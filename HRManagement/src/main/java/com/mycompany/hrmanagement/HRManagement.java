@@ -90,6 +90,7 @@ public class HRManagement {
         for (int i = 0; i < Pem.size(); i++) {
             if (Pem.get(i).getEmployeeID().equals(b)) {
                 System.out.println("Employee Name : ");
+                sc.nextLine();
                 Pem.get(i).setEmployeeName(sc.nextLine());
                 System.out.println("Employee year of birth : ");
                 Pem.get(i).setYearOfBirth(sc.nextInt());
@@ -107,6 +108,7 @@ public class HRManagement {
         for (int i = 0; i < Fem.size(); i++) {
             if (Fem.get(i).getEmployeeID().equals(b)) {
                 System.out.println("Employee Name : ");
+                sc.nextLine();
                 Fem.get(i).setEmployeeName(sc.nextLine());
                 System.out.println("Employee year of birth : ");
                 Fem.get(i).setYearOfBirth(sc.nextInt());
@@ -138,14 +140,6 @@ public class HRManagement {
             }
         }
     }
-
-    public void sortByAgeAPayment() {
-        HRManagement a = new HRManagement();
-        a.sortFullTEm();
-        a.sortPartTEm();
-
-    }
-
     public void menu() {
         int menu;
         HRManagement m = new HRManagement();
@@ -193,7 +187,8 @@ public class HRManagement {
                     m.searchEmByPay();
                     break;
                 case 10:
-                    m.sortByAgeAPayment();
+                    m.sortFullTEm();
+                    m.sortPartTEm();
                     break;
                 case 11:
                     break;
@@ -204,7 +199,7 @@ public class HRManagement {
     public void sortFullTEm() {
         Comparator<FullTimeEmployee> com1 = new Comparator<FullTimeEmployee>() {
             public int compare(FullTimeEmployee e1, FullTimeEmployee e2) {
-                if (e2.getYearOfBirth() < e1.getYearOfBirth()) {
+                if (e2.getYearOfBirth() > e1.getYearOfBirth()) {
                     return 1;
                 } else if ((e2.getYearOfBirth()) == (e1.getYearOfBirth())) {
                     if (e2.getPayment() < e1.getPayment()) {
@@ -225,7 +220,7 @@ public class HRManagement {
     public void sortPartTEm() {
         Comparator<PartTimeEmployee> com2 = new Comparator<PartTimeEmployee>() {
             public int compare(PartTimeEmployee e1, PartTimeEmployee e2) {
-                if (e2.getYearOfBirth() < e1.getYearOfBirth()) {
+                if (e2.getYearOfBirth() > e1.getYearOfBirth()) {
                     return 1;
                 } else if ((e2.getYearOfBirth()) == (e1.getYearOfBirth())) {
                     if (e2.getPayment() < e1.getPayment()) {

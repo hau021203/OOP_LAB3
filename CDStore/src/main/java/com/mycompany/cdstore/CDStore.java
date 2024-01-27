@@ -89,6 +89,7 @@ public class CDStore {
                 System.out.println("Enter CD type (audio/video) :");
                 CDs.get(i).setCDType(sc.next());
                 System.out.println("Enter CD title :");
+                sc.nextLine();
                 CDs.get(i).setTitle(sc.nextLine());
                 System.out.println("Enter CD price :");
                 CDs.get(i).setPrice(sc.nextInt());
@@ -148,7 +149,7 @@ public class CDStore {
 
     }
 
-    public void sort() {
+    private void sort() {
         Comparator<MenuEdit> com = new Comparator<MenuEdit>() {
             public int compare(MenuEdit e1, MenuEdit e2) {
                 if (e2.getYearOfRe() - e1.getYearOfRe() < 0) {

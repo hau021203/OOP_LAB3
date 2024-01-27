@@ -25,6 +25,7 @@ public class MenuEdit {
         System.out.println("Enter CD type (audio/video) :");
         CDType = sc.next();
         System.out.println("Enter CD title :");
+        sc.nextLine();
         Title = sc.nextLine();
         System.out.println("Enter CD price :");
         Price = sc.nextInt();
